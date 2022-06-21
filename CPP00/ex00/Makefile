@@ -6,7 +6,7 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/06/14 15:22:13 by chduong          ###   ########.fr        #
+#    Updated: 2022/06/21 11:30:37 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,8 @@ RM			= 	rm -rf
 #########################################
 #			FLAGS COMPILATION			#
 #########################################
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 DEBUG		=	-g -fsanitize=address
-STD		=	-std=c++98
 
 #########################################
 #				COLORS					#
@@ -59,16 +58,19 @@ OBJ		=	$(SRC:%.cpp=%.o)
 #			MAKE	RULES				#
 #########################################
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(STD) -o $@ $(OBJ)
-
+	@echo "> $(CYAN)Generate objects$(END) : \t\t[$(GREEN)OK$(END)]"
+	@$(CC) $(CFLAGS) -o $@ $(OBJ)
+	@echo "> $(WHITE)$(BOLD)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
+	@echo "> $(PURPLE)Clean objects$(END) : \t\t[$(GREEN)OK$(END)]"
 	
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "> $(PURPLE)Delete Exec$(END) : \t\t[$(GREEN)OK$(END)]"
 	
 re: fclean all 
 

@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:56:42 by chduong           #+#    #+#             */
-/*   Updated: 2022/06/17 14:46:45 by chduong          ###   ########.fr       */
+/*   Updated: 2022/06/21 11:45:10 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 # include <string>
 # include <iostream>
 # include <iomanip>
+# include <cstdlib>
 # include "colors.hpp"
-# include <stdlib.h>
 
 class Contact {	
 	private:

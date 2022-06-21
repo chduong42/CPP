@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:32:41 by chduong           #+#    #+#             */
-/*   Updated: 2022/06/17 14:35:32 by chduong          ###   ########.fr       */
+/*   Updated: 2022/06/21 11:55:46 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,21 @@ void	PhoneBook::printPB(void)
 
 void	PhoneBook::searchContact(void)
 {
-	int	i;
+	int			i;
+	std::string	buff;
 	
 	this->printPB();
 	std::cout << "Which contact to display ? (0 to cancel)\nID: ";
-	std::cin >> i;
-	if (i < 0 || i > 8)
-		std::cout << RED << "Error : Bad ID !" << RESET << std::endl;
-	else if ( i == 0)
-		return;
-	else
+	std::getline(std::cin, buff);
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		exit(-1);
+	}
+	i = atoi(buff.c_str());
+	if (i > 0 && i <= 8)
 		this->_contacts[i - 1].printData();
-	std::cin.ignore();
+	else
+		std::cout << RED << "Error : Bad ID !" << RESET << std::endl;
 }
