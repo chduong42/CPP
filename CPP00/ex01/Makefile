@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
+#    By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/06/16 19:58:08 by chduong          ###   ########.fr        #
+#    Updated: 2022/06/29 21:57:57 by kennyduong       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ BOLD       =   $'\e[1m
 #########################################
 #				COMMANDS				#
 #########################################
-CC			=	c++
+CC			=	c++ -c
+LINK		=	c++
 MKDIR		=	mkdir -p
 AR			=	ar rcs
 RM			= 	rm -rf
@@ -39,6 +40,8 @@ RM			= 	rm -rf
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 DEBUG		=	-g -fsanitize=address
 INC			=	-I inc
+
+LDFLAGS		=	
 
 #########################################
 #			EXEC NAME & FOLDERS			#
@@ -60,17 +63,14 @@ OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
 #########################################
 #			MAKE	RULES				#
 #########################################
-$(NAME): $(OBJ_DIR) $(OBJ)
+$(NAME): $(OBJ)
 	@echo "> $(CYAN)Generate objects$(END) : \t\t[$(GREEN)OK$(END)]"
-	@$(CC) $(CFLAGS) -o $@ $(OBJ)
-	@echo "> $(WHITE)$(BOLD)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
+	$(LINK) $(LDFLAGS) $(OBJ) -o $@
+	@echo "> $(WHITE)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.cpp
 	@${MKDIR} ${@D}
-	@${CC} ${CFLAGS} ${INC} -c -o $@ $<
-
-$(OBJ_DIR):
-	@$(MKDIR) $(OBJ_DIR)
+	${CC} ${CFLAGS} ${INC} $< -o $@
 
 all: $(NAME)
 

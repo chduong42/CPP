@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
+#    By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/06/21 11:30:37 by chduong          ###   ########.fr        #
+#    Updated: 2022/06/29 21:56:22 by kennyduong       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,14 @@
 #			FOLDERS AND NAME			#
 #########################################
 NAME		=	megaphone
+SRC_DIR		=	src/
+OBJ_DIR		=	obj/
 
 #########################################
 #				COMMANDS				#
 #########################################
 CC			=	c++
+LINK		=	c++
 MKDIR		=	mkdir -p
 AR			=	ar rcs
 RM			= 	rm -rf
@@ -28,39 +31,47 @@ RM			= 	rm -rf
 #########################################
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 DEBUG		=	-g -fsanitize=address
+LDFLAGS		=	
 
 #########################################
 #				COLORS					#
 #########################################
-GREY       =   $'\033[0;30m
-RED        =   $'\033[0;31m
-GREEN      =   $'\033[0;92m
-YELLOW     =   $'\033[0;33m
-BLUE       =   $'\033[0;34m
-U_BLUE     =   $'\033[4;34m
-PURPLE     =   $'\033[0;35m
-CYAN       =   $'\033[0;96m
-WHITE      =   $'\033[0;37m
-END        =   $'\033[0;m
-BOLD       =   $'\e[1m
+GREY  		=   $'\033[0;30m
+RED   		=   $'\033[0;31m
+GREEN 		=   $'\033[0;92m
+YELLOW		=   $'\033[0;33m
+BLUE  		=   $'\033[0;34m
+U_BLUE		=   $'\033[4;34m
+PURPLE		=   $'\033[0;35m
+CYAN  		=   $'\033[0;96m
+WHITE 		=   $'\033[0;37m
+END   		=   $'\033[0;m
+BOLD  		=   $'\e[1m
 
 #########################################
 #			SOURCES	FILES				#
 #########################################
-SRC		=	megaphone.cpp
+SRC			=	megaphone.cpp
 					
 #########################################
-#            OBJECT FILES    	        #
+#           OBJECT FILES    	        #
 #########################################
-OBJ		=	$(SRC:%.cpp=%.o)
+OBJ			=	${SRC:.cpp=.o}
+OBJ			:=	${addprefix ${OBJ_DIR}, ${OBJ}}
+
+DEP			=	${OBJ:.o=.d}
 
 #########################################
 #			MAKE	RULES				#
 #########################################
 $(NAME): $(OBJ)
 	@echo "> $(CYAN)Generate objects$(END) : \t\t[$(GREEN)OK$(END)]"
-	@$(CC) $(CFLAGS) -o $@ $(OBJ)
-	@echo "> $(WHITE)$(BOLD)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
+	$(LINK) $(LDFLAGS) $(OBJ) -o $@
+	@echo "> $(WHITE)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
+
+${OBJ_DIR}%.o: ${SRC_DIR}%.cpp
+	@${MKDIR} ${@D}
+	${CC} ${CFLAGS} -c -o $@ $<
 
 all: $(NAME)
 
@@ -72,6 +83,8 @@ fclean: clean
 	@$(RM) $(NAME)
 	@echo "> $(PURPLE)Delete Exec$(END) : \t\t[$(GREEN)OK$(END)]"
 	
-re: fclean all 
+re: clean all 
+
+fre: fclean all 
 
 .PHONY: all clean fclean re
