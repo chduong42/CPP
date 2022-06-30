@@ -6,14 +6,14 @@
 #    By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/06/30 13:42:27 by kennyduong       ###   ########.fr        #
+#    Updated: 2022/06/30 18:08:41 by kennyduong       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #			EXEC NAME & FOLDERS			#
 #########################################
-NAME		=	phonebook
+NAME		=	zombie
 SRC_DIR		=	src/
 INC_DIR		=	inc/
 OBJ_DIR		=	obj/
@@ -29,15 +29,15 @@ AR			=	ar rcs
 RM			= 	rm -rf
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+LFLAGS		=	
 DEBUG		=	-g -fsanitize=address
 INC			=	-I inc
-LDFLAGS		=	
 
 #########################################
 #			SOURCES	FILES				#
 #           & OBJECT FILES    	        #
 #########################################
-SRC		=	main.cpp	PhoneBook.cpp	Contact.cpp
+SRC		=	main.cpp		Zombie.cpp		newZombie.cpp		randomChump.cpp
 					
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
@@ -47,8 +47,8 @@ OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
 #########################################
 $(NAME): $(OBJ)
 	@echo "> $(CYAN)Generate objects$(END) : \t\t[$(GREEN)OK$(END)]"
-	$(LINK) $(LDFLAGS) $(OBJ) -o $@
-	@echo "> $(WHITE)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
+	$(LINK) $(LFLAGS) $(OBJ) -o $@
+	@echo "> $(CYAN)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.cpp
 	@${MKDIR} ${@D}
