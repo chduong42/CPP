@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/30 18:41:20 by kennyduong        #+#    #+#             */
-/*   Updated: 2022/07/01 12:48:27 by chduong          ###   ########.fr       */
+/*   Created: 2022/06/30 13:25:42 by kennyduong        #+#    #+#             */
+/*   Updated: 2022/07/01 16:18:47 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-# include <string>
-# include <iostream>
+#include "Zombie.hpp"
 
-class Zombie {
-	private:
-		std::string		_name;
+int main(void)
+{
+	std::cout << "Invocation de zombies John !" << std::endl;
+	Zombie *horde = zombieHorde(4, "John");
 	
-	public:
-		Zombie(std::string name);
-		~Zombie(void);
-		
-		void	announce(void) const;
-};
+	std::cout << "\nEn avant !" << std::endl;
+	for(int i = 0; i < 4; i++)
+		horde[i].announce();
 
-Zombie*		newZombie(std::string name);
-void		randomChump(std::string name);
-
-#endif
+	std::cout << "\nRetournez dans vos tombes !" << std::endl;
+	delete [] horde;
+	return 0;
+}
