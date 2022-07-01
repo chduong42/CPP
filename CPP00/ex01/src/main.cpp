@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 19:36:21 by chduong           #+#    #+#             */
-/*   Updated: 2022/06/21 11:57:25 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/01 11:39:09 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
             pb.addContact(i++);
         else if (buff == "SEARCH")
             pb.searchContact();
-        else if (buff == "EXIT")
+        else if (buff == "EXIT" || std::cin.eof())
             break;
         if (i == 8)
             i = 0;
