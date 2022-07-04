@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
+#    By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/07/01 16:29:56 by chduong          ###   ########.fr        #
+#    Updated: 2022/07/04 17:06:32 by kennyduong       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@
 NAME		=	brain
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
+INC_DIR		=	inc/
 
 #########################################
 #				COMMANDS				#
@@ -30,12 +31,13 @@ RM			= 	rm -rf
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 LFLAGS		=	
 DEBUG		=	-g -fsanitize=address
+INC			=	-I inc
 
 #########################################
 #			SOURCES	FILES				#
 #           & OBJECT FILES    	        #
 #########################################
-SRC		=	main.cpp
+SRC		=	main.cpp	HumanA.cpp		HumanB.cpp		Weapon.cpp
 					
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
@@ -50,7 +52,7 @@ $(NAME): $(OBJ)
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.cpp
 	@${MKDIR} ${@D}
-	${CC} ${CFLAGS} $< -o $@
+	${CC} ${CFLAGS} ${INC} $< -o $@
 
 all: $(NAME)
 

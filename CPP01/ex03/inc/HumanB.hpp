@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:51:52 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/01 17:55:24 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/04 19:29:03 by kennyduong       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 # include "Weapon.hpp"
 
 class HumanB {
-    private:
-        Weapon          _weapon;
-        std::string     _name;
-        
-    public:
-        HumanB();
-        ~HumanB();
+	private:
+		std::string		_name;
+		Weapon			_weapon;
+		
+	public:
+		HumanB(std::string name);
+		~HumanB();
 
-        void    attack();
+		void	attack();
+		void	setWeapon(Weapon weapon);
 };
 
 #endif
