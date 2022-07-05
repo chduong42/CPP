@@ -6,14 +6,14 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/07/05 13:51:31 by chduong          ###   ########.fr        #
+#    Updated: 2022/07/05 15:54:14 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #			EXEC NAME & FOLDERS			#
 #########################################
-NAME		=	weapon
+NAME		=	replace.exec
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 INC_DIR		=	inc/
@@ -37,7 +37,7 @@ INC			=	-I inc
 #			SOURCES	FILES				#
 #           & OBJECT FILES    	        #
 #########################################
-SRC		=	main.cpp	HumanA.cpp		HumanB.cpp		Weapon.cpp
+SRC		=	main.cpp	
 					
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
