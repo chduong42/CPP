@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:14:15 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/05 17:53:44 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/06 14:42:43 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,39 +19,29 @@ int check_arg(int argc, char **argv)
         std::cout << "Using : ./replace.exec <filename> <toReplace> <replaceWith>" << std::endl;
         return (1);
     }
+    std::ifstream inputFile;
+    inputFile.open(argv[1]);
+    if (inputFile.is_open() == false)
+    {
+        std::cout << "Error: Your Replace can't be opened" << std::endl;
+        return (1);
+    }
+    inputFile.close();
     if (!strlen(argv[2]))
     {
         std::cout << "Error: Nothing to replace" << std::endl;
         return (1);
     }
-    std::fstream inputFile;
-    inputFile.open(argv[1]);
-    if (inputFile.is_open() == false)
-    {
-        std::cout << "Error: Your file can't be opened" << std::endl;
-        return (1);
-    }
-    inputFile.close();
     return (0);
 }
 
 int main(int argc, char **argv)
 {
-    // if (check_arg(argc, argv))
-    //     return (1);
-    (void)argc;
+    if (check_arg(argc, argv))
+        return (1);
     
-    std::ifstream   inFile;
-    std::ofstream   outFile;
-    std::string     buff(argv[1]);
-    buff += ".replace";
-    inFile.open(argv[1]);
-    outFile.open(buff.c_str());
-    outFile << inFile.rdbuf();
-    
-    buff.clear();
-    buff = 
-    inFile.close();
-    outFile.close();
+    Replace r;
+    r.openfiles(argv[1]);
+    r.replace(argv[2], argv[3]);
     return (0);
-}
+} 

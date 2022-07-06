@@ -6,7 +6,7 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/07/05 15:54:14 by chduong          ###   ########.fr        #
+#    Updated: 2022/07/06 16:04:52 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,14 +30,14 @@ RM			= 	rm -rf
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 LFLAGS		=	
-DEBUG		=	-g -fsanitize=address
+DEBUG		=	-g3 -fsanitize=address,undefined
 INC			=	-I inc
 
 #########################################
 #			SOURCES	FILES				#
 #           & OBJECT FILES    	        #
 #########################################
-SRC		=	main.cpp	
+SRC		=	main.cpp	Replace.cpp
 					
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
@@ -47,12 +47,12 @@ OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
 #########################################
 $(NAME): $(OBJ)
 	@echo "> $(CYAN)Generate objects$(END) : \t\t[$(GREEN)OK$(END)]"
-	$(LINK) $(LFLAGS) $(OBJ) -o $@
+	$(LINK) $(DEBUG) $(LFLAGS) $(OBJ) -o $@
 	@echo "> $(CYAN)Compilation$(END) : \t\t[$(YELLOW)COMPLETE$(END)]"
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.cpp
 	@${MKDIR} ${@D}
-	${CC} ${CFLAGS} ${INC} $< -o $@
+	${CC} ${CFLAGS} ${INC} $(DEBUG) $< -o $@
 
 all: $(NAME)
 
