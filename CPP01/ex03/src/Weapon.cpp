@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+        */
+/*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:48:13 by kennyduong        #+#    #+#             */
-/*   Updated: 2022/07/04 18:24:28 by kennyduong       ###   ########.fr       */
+/*   Updated: 2022/07/07 16:57:40 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ std::string Weapon::getType() const {
 }
 
 void    Weapon::setType(std::string type) {
+    std::cout << "Weapon [" << BRED << this->_type << RESET;
+    std::cout <<  "] has changed to [" << BGRN << type << RESET << "]" << std::endl;
     this->_type = type;
 }

@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 17:25:58 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/07 16:49:41 by chduong          ###   ########.fr       */
+/*   Created: 2022/07/07 17:44:04 by chduong           #+#    #+#             */
+/*   Updated: 2022/07/08 23:31:37 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
-# include <string>
+#ifndef FIXED_HPP
+# define FIXED_HPP
 # include <iostream>
-# include "colors.hpp"
 
-class Weapon {
-    private:
-        std::string     _type;
-        
-    public:
-        Weapon(std::string type);
-        ~Weapon();
 
-        std::string     getType() const;
-        void            setType(std::string type);
+class Fixed {
+	private:
+		int					_value;
+		static int const	_nbits;
+		
+	public:
+		Fixed(); // Constructeur par défaut
+		Fixed(Fixed const &src); // Constructeur de recopie
+		~Fixed(); // Destructeur éventuellement virtuel
+
+		Fixed &operator=(Fixed const &src); // Operator d'affectation
+		
+		int					getRawBits(void) const;
+		void				setRawBits(int const raw);
 };
 
 #endif
