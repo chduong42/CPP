@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+        */
+/*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:44:52 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/12 13:30:54 by kennyduong       ###   ########.fr       */
+/*   Updated: 2022/07/12 16:56:11 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ float   Fixed::toFloat(void) const {
     return ((float)this->_value / (1 << Fixed::_nbits));
 }
 
-std::ostream& operator<<(std::ostream &flux, Fixed const& src)
+std::ostream& operator<<(std::ostream &flux, Fixed const &src)
 {
     flux << src.toFloat();
     return flux;
