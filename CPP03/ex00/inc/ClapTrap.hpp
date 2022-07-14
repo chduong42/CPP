@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:33:46 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/14 18:30:10 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/14 22:50:49 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 # include <iostream>
 # include <string>
 
+typedef unsigned int uint;
+
 class ClapTrap {
 	private:
 		std::string     _name;
-		unsigned int	_hit_pts;
-		unsigned int    _energy_pts;
-		unsigned int    _attack_dmg;        
+		uint			_hit_pts;
+		uint		    _energy_pts;
+		uint		    _attack_dmg;        
 
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
-		ClapTrap(std::string name, uint hp, uint energy, uint damage);
-		ClapTrap(ClapTrap const &src)
+		ClapTrap(ClapTrap const &src);
 		~ClapTrap();
 		
 		ClapTrap&		operator=(ClapTrap const &src);
@@ -35,7 +36,5 @@ class ClapTrap {
 		void			takeDamage(uint amount);
 		void			beRepaired(uint amount);
 };
-
-std::ostream& operator<<(std::ostream &flux, Fixed const& src);
 
 #endif
