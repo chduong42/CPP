@@ -6,18 +6,18 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:34:27 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/15 11:55:47 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/15 12:14:20 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("Unknown"), _hit_pts(10), _energy_pts(10), _attack_dmg(0) {
+ClapTrap::ClapTrap() : _name("Unknown"), _hit_pts(100), _energy_pts(50), _attack_dmg(20) {
 	std::cout << "Default Constructor called : unknown ClapTrap created" << std::endl;
 	return;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_pts(10), _energy_pts(10), _attack_dmg(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_pts(100), _energy_pts(50), _attack_dmg(20) {
 	std::cout << "Parametric Constructor called : ClapTrap " << this->_name << " created" << std::endl;
 	return;
 }
