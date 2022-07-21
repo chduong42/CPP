@@ -6,15 +6,14 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 12:15:45 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/19 21:35:05 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/21 21:12:03 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap(), _gateKeeper(false) {
-	std::cout << "Default Constructor called : unknown ScavTrap created" << std::endl;
-	_name = "noName";
+	std::cout << "Default Constructor called : unamed ScavTrap created" << std::endl;
 	_hit_pts = 100;
 	_energy_pts = 50;
 	_attack_dmg = 20;
@@ -22,11 +21,10 @@ ScavTrap::ScavTrap() : ClapTrap(), _gateKeeper(false) {
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _gateKeeper(false) {
-	// _name = name;
+	std::cout << "Parametric Constructor called : ScavTrap " << this->_name << " created" << std::endl;
 	_hit_pts = 100;
 	_energy_pts = 50;
 	_attack_dmg = 20;
-	std::cout << "Parametric Constructor called : ScavTrap " << this->_name << " created" << std::endl;
 	return;
 }
 

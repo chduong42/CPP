@@ -6,12 +6,12 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:33:46 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/19 20:32:59 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/21 15:27:13 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ScavTrap_HPP
-# define ScavTrap_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {

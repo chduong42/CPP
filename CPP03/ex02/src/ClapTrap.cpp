@@ -6,14 +6,14 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:34:27 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/19 21:30:58 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/21 21:12:03 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("noName"), _hit_pts(10), _energy_pts(10), _attack_dmg(0) {
-	std::cout << "Default Constructor called : unknown ClapTrap created" << std::endl;
+ClapTrap::ClapTrap() : _name("unamed"), _hit_pts(10), _energy_pts(10), _attack_dmg(0) {
+	std::cout << "Default Constructor called : unamed ClapTrap created" << std::endl;
 	return;
 }
 
@@ -59,7 +59,7 @@ void	ClapTrap::attack(const std::string& target) {
 	else if (!this->_energy_pts)
 		std::cout << this->_name << ": I can't attack, because I am out of energy" << std::endl;
 	else {
-		std::cout << this->_name << ": Clap " << target;
+		std::cout << this->_name << " attack " << target;
 		std::cout << " causing " << this->_attack_dmg << " points of damage! ";
 		this->_energy_pts--;
 		std::cout <<  "(" << this->_energy_pts << " energy left)" << std::endl;

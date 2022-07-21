@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:33:46 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/21 15:26:52 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/21 17:19:32 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCAVTRAP_HPP
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	private:
 		bool			_gateKeeper;
 

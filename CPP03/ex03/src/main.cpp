@@ -6,25 +6,28 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:36:48 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/21 16:05:32 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/21 22:39:33 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
     ClapTrap John("John");
-    FragTrap Sam("Sam");
+    DiamondTrap Daemon("Daemon");
     
     std::cout << "\n========== FIGHT ! ===========\n" << std::endl;
-    John.attack("Sam");
-    Sam.takeDamage(John.getAttackDmg());
+    John.attack("Daemon");
+    Daemon.takeDamage(John.getAttackDmg());
     
-    Sam.attack("John");
-    John.takeDamage(Sam.getAttackDmg());
+    Daemon.attack("John");
+    John.takeDamage(Daemon.getAttackDmg());
 
-    Sam.highFivesGuys();
+    Daemon.highFivesGuys();
+    Daemon.beRepaired(1);
+    Daemon.guardGate();
+    Daemon.whoAmI();
 
     std::cout << "\n========== END MATCH ! ===========\n" << std::endl;
     return 0;

@@ -6,7 +6,7 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/07/21 15:29:32 by chduong          ###   ########.fr        #
+#    Updated: 2022/07/21 16:25:48 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ RM			= 	rm -rf
 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+=	-MMD -MP
+CXXFLAGS	+=	-Wshadow -Wno-shadow
 
 LFLAGS		=	
 DEBUG		=	-g3 -fsanitize=address,undefined
@@ -40,7 +41,7 @@ INC			=	-I inc
 #           & OBJECT FILES    	        #
 #           & DEPENDENCIES    	        #
 #########################################
-SRC		=	main.cpp	ClapTrap.cpp	ScavTrap.cpp	FragTrap.cpp
+SRC		=	main.cpp	ClapTrap.cpp	ScavTrap.cpp	FragTrap.cpp	DiamondTrap.cpp
 					
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
