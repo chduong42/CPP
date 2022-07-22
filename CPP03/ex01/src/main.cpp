@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:36:48 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/19 21:32:47 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/22 16:46:52 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(void)
     std::cout << "\n========== FIGHT ! ===========\n" << std::endl;
     John.attack("Tom");
     Tom.takeDamage(John.getAttackDmg());
+
+    John.beRepaired(2);    
     
     Tom.attack("John");
     John.takeDamage(Tom.getAttackDmg());
