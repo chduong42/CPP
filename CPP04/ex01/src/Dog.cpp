@@ -6,13 +6,19 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:40:04 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/26 15:56:10 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/26 21:16:13 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() : Animal("Dog") {
+	std::cout << "Dog Default Constructor called" << std::endl;
+	this->_brain = new Brain;
+	return;
+}
+
+Dog::Dog(Brain *brain) : Animal("Dog"), _brain(brain) {
 	std::cout << "Dog Default Constructor called" << std::endl;
 	return;
 }
@@ -25,6 +31,7 @@ Dog::Dog(Dog const &src) {
 
 Dog::~Dog() {
 	std::cout << "Dog Destructor called" << std::endl;
+	delete this->_brain;
 	return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 16:06:13 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/26 16:55:33 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/26 19:17:22 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ class Brain {
 		virtual ~Brain();
 
 		Brain&			operator=(Brain const &src);
+		
+		void			setIdeas(int nb_ideas);
+		void			deleteIdeas();
+		void			printIdeas();
 };
 
 #endif

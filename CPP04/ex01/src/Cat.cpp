@@ -6,13 +6,19 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:40:04 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/26 15:56:05 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/26 21:15:38 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat") {
+	std::cout << "Cat Default Constructor called" << std::endl;
+	this->_brain = new Brain;
+	return;
+}
+
+Cat::Cat(Brain *brain) : Animal("Cat"), _brain(brain) {
 	std::cout << "Cat Default Constructor called" << std::endl;
 	return;
 }
@@ -25,6 +31,7 @@ Cat::Cat(Cat const &src) {
 
 Cat::~Cat() {
 	std::cout << "Cat Destructor called" << std::endl;
+	delete this->_brain;
 	return;
 }
 

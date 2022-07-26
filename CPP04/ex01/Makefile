@@ -6,7 +6,7 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/07/22 17:54:01 by chduong          ###   ########.fr        #
+#    Updated: 2022/07/26 19:03:25 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ RM			= 	rm -rf
 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+=	-MMD -MP
-CXXFLAGS	+=	-Wshadow -Wno-shadow
 
 LFLAGS		=	
 DEBUG		=	-g3 -fsanitize=address,undefined
@@ -41,7 +40,7 @@ INC			=	-I inc
 #           & OBJECT FILES    	        #
 #           & DEPENDENCIES    	        #
 #########################################
-SRC		=	main.cpp	Animal.cpp		Cat.cpp		Dog.cpp
+SRC		=	main.cpp	Animal.cpp		Cat.cpp		Dog.cpp		Brain.cpp
 					
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))

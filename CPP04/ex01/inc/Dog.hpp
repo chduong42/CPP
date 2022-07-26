@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:20:42 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/26 17:49:22 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/26 21:09:38 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 
 class Dog : public Animal {
 	private:
-		Brain	*brain;
+		Brain					*_brain;
 		
 	public:
 		Dog();
-		Dog(std::string type);
+		Dog(Brain *brain);
 		Dog(Dog const &src);
 		~Dog();
 
-		Dog&			operator=(Dog const &src);
+		Dog&					operator=(Dog const &src);
 
 		virtual void			makeSound() const;
 };
