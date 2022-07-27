@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:34:08 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/26 15:57:38 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/27 18:44:38 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ Animal::~Animal() {
 }
 
 Animal&    Animal::operator=(Animal const &src) {
-	this->_type = src._type;
+	if (this != &src)
+		this->_type = src._type;
 	return *this;
 }
 
@@ -43,5 +44,5 @@ std::string	Animal::getType(void) const {
 }
 
 void		Animal::makeSound(void) const {
-	std::cout << "Un chien aboit et un chat miaule" << std::endl;
+	std::cout << this->getType() << ": ???" << std::endl;
 }

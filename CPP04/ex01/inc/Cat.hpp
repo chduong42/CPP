@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:20:16 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/26 21:09:22 by chduong          ###   ########.fr       */
+/*   Updated: 2022/07/27 18:42:06 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ class Cat : public Animal {
 
 	public:
 		Cat();
-		Cat(Brain *brain);
 		Cat(Cat const &src);
 		~Cat();
 
 		Cat&					operator=(Cat const &src);
 
 		virtual void			makeSound() const;
+		void					setIdeas(int nb_ideas);
+		void					printIdeas() const;
+		void					deleteIdeas();
 };
 
 #endif

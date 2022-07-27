@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 17:20:42 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/27 17:44:20 by chduong          ###   ########.fr       */
+/*   Created: 2022/07/22 17:20:16 by chduong           #+#    #+#             */
+/*   Updated: 2022/07/27 18:43:03 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Dog : public Animal {
+class Cat : public AAnimal {
 	private:
 		Brain					*_brain;
-		
-	public:
-		Dog();
-		Dog(Dog const &src);
-		~Dog();
 
-		Dog&					operator=(Dog const &src);
+	public:
+		Cat();
+		Cat(Cat const &src);
+		~Cat();
+
+		Cat&					operator=(Cat const &src);
 
 		virtual void			makeSound() const;
 		void					setIdeas(int nb_ideas);

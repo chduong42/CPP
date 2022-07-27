@@ -6,7 +6,7 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/07/27 18:32:37 by chduong          ###   ########.fr        #
+#    Updated: 2022/07/26 19:03:25 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,7 @@ INC			=	-I inc
 #           & OBJECT FILES    	        #
 #           & DEPENDENCIES    	        #
 #########################################
-SRC		=	main.cpp			Animal.cpp		Cat.cpp		Dog.cpp\
-			WrongAnimal.cpp		WrongCat.cpp
+SRC		=	main.cpp	Animal.cpp		Cat.cpp		Dog.cpp		Brain.cpp
 					
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 17:20:42 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/27 17:44:20 by chduong          ###   ########.fr       */
+/*   Created: 2022/07/22 17:20:16 by chduong           #+#    #+#             */
+/*   Updated: 2022/07/26 21:08:53 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+# include "WrongAnimal.hpp"
 
-class Dog : public Animal {
-	private:
-		Brain					*_brain;
-		
-	public:
-		Dog();
-		Dog(Dog const &src);
-		~Dog();
+class WrongCat : public WrongAnimal {
+    public:
+        WrongCat();
+		WrongCat(WrongCat const &src);
+		~WrongCat();
 
-		Dog&					operator=(Dog const &src);
+		WrongCat&		operator=(WrongCat const &src);
 
-		virtual void			makeSound() const;
-		void					setIdeas(int nb_ideas);
-		void					printIdeas() const;
-		void					deleteIdeas();
+		void			makeSound() const;
 };
 
 #endif

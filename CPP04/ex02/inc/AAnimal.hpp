@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 17:20:42 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/27 17:44:20 by chduong          ###   ########.fr       */
+/*   Created: 2022/07/22 17:02:25 by chduong           #+#    #+#             */
+/*   Updated: 2022/07/27 18:45:09 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
+# include <string>
+# include <iostream>
 
-class Dog : public Animal {
-	private:
-		Brain					*_brain;
-		
+class AAnimal {
+	protected:
+		std::string		_type;
+	
 	public:
-		Dog();
-		Dog(Dog const &src);
-		~Dog();
+		AAnimal();
+		AAnimal(std::string type);
+		AAnimal(AAnimal const &src);
+		virtual ~AAnimal();
 
-		Dog&					operator=(Dog const &src);
+		AAnimal&			operator=(AAnimal const &src);
 
-		virtual void			makeSound() const;
-		void					setIdeas(int nb_ideas);
-		void					printIdeas() const;
-		void					deleteIdeas();
+		std::string		getType() const;
+		virtual void	makeSound() const;
 };
 
 #endif

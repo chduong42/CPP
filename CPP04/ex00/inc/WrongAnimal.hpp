@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongWrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 17:20:42 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/27 17:44:20 by chduong          ###   ########.fr       */
+/*   Created: 2022/07/27 18:23:20 by chduong           #+#    #+#             */
+/*   Updated: 2022/07/27 18:23:34 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
+# include <string>
+# include <iostream>
 
-class Dog : public Animal {
-	private:
-		Brain					*_brain;
-		
+class WrongAnimal {
+	protected:
+		std::string		_type;
+	
 	public:
-		Dog();
-		Dog(Dog const &src);
-		~Dog();
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(WrongAnimal const &src);
+		virtual ~WrongAnimal();
 
-		Dog&					operator=(Dog const &src);
+		WrongAnimal&	operator=(WrongAnimal const &src);
 
-		virtual void			makeSound() const;
-		void					setIdeas(int nb_ideas);
-		void					printIdeas() const;
-		void					deleteIdeas();
+		std::string		getType() const;
+		void			makeSound() const;
 };
 
 #endif
