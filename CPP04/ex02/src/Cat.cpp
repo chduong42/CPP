@@ -6,19 +6,19 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:40:04 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/27 17:45:14 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/03 18:12:56 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() : AAnimal("Cat") {
 	std::cout << "Cat Default Constructor called" << std::endl;
 	this->_brain = new Brain;
 	return;
 }
 
-Cat::Cat(Cat const &src) : Animal(src._type), _brain(new Brain(*src._brain)) {
+Cat::Cat(Cat const &src) : AAnimal(src._type), _brain(new Brain(*src._brain)) {
 	std::cout << "Cat Copy Constructor called" << std::endl;
 	*this = src;
 	return;

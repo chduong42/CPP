@@ -6,19 +6,19 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:40:04 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/27 17:44:53 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/03 18:13:06 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog") {
+Dog::Dog() : AAnimal("Dog") {
 	std::cout << "Dog Default Constructor called" << std::endl;
 	this->_brain = new Brain;
 	return;
 }
 
-Dog::Dog(Dog const &src) : Animal(src._type), _brain(new Brain(*src._brain)) {
+Dog::Dog(Dog const &src) : AAnimal(src._type), _brain(new Brain(*src._brain)) {
 	std::cout << "Dog Copy Constructor called" << std::endl;
 	return;
 }

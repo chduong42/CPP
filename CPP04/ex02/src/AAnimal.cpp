@@ -42,7 +42,3 @@ AAnimal&    AAnimal::operator=(AAnimal const &src) {
 std::string	AAnimal::getType(void) const {
 	return this->_type;
 }
-
-void		AAnimal::makeSound(void) const {
-	std::cout << this->getType() << ": ???" << std::endl;
-}
