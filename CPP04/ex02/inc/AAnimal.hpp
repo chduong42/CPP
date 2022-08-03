@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kennyduong <kennyduong@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:02:25 by chduong           #+#    #+#             */
-/*   Updated: 2022/07/27 18:45:09 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/02 21:06:08 by kennyduong       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AAnimal {
 		AAnimal&			operator=(AAnimal const &src);
 
 		std::string		getType() const;
-		virtual void	makeSound() const;
+		virtual void	makeSound() = 0;
 };
 
 #endif
