@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:02:25 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/04 15:43:20 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/04 17:14:14 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,17 @@ class Bureaucrat {
 	
 	class GradeTooHighException : public std::exception {
 		public:
-			
-		
+			virtual void printErr() const throw() {
+				std::cout << "The grade is too high" << std::endl;
+			}
 	};
 
-	class GradeTooHighException : public std::exception {
+	class GradeTooLowException : public std::exception {
 		public:
-			
-		
+			virtual void printErr() const throw() {
+				std::cout << "The grade is too low" << std::endl;
+			}
 	};
-
 };
 
 std::ostream& operator<<(std::ostream &flux, Bureaucrat const& src);
