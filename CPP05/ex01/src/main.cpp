@@ -6,18 +6,18 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:51:16 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/04 20:20:49 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/04 20:24:27 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "colors.hpp"
+#include "Form.hpp"
 
 int main()
 {
 	std::cout << BRED << "============ Test Too High Grade to construct ============" << RESET << std::endl;
 	try {
-		Bureaucrat Eric("Eric", 160);
+		Form f1("f1", 160);
 	}
 	catch (Bureaucrat::GradeTooLowException e) {
 		std::cout << "Eric constructor : ";
@@ -34,14 +34,13 @@ int main()
 	}
 
 	std::cout << BGRN << "\n============ Test constructor OK ============" << RESET << std::endl;
-	Bureaucrat Random();
 	Bureaucrat K("Kenny", 2);
-	Bureaucrat K2(K);
 	Bureaucrat Max("Max", 149);
+
 
 	std::cout << BGRN << "\n============ Test Accessors ============" << RESET << std::endl;
 	std::cout << "K's name is " << K.getName() << " and his grade is " << K.getGrade() << std::endl;
-	std::cout << "K2's name is " << K2.getName() << " and his grade is " << K2.getGrade() << std::endl;
+
 
 	std::cout << BRED << "\n============ Test Too High Grade to upGrade ============" << RESET << std::endl;
 	try {
