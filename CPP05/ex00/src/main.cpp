@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:51:16 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/04 20:20:49 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/05 15:17:31 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-	std::cout << BRED << "============ Test Too High Grade to construct ============" << RESET << std::endl;
+	std::cout << BRED << "============ Test Too Low Grade to construct ============" << RESET << std::endl;
 	try {
 		Bureaucrat Eric("Eric", 160);
 	}
@@ -24,7 +24,7 @@ int main()
 		e.printErr();
 	}
 
-	std::cout << BRED << "\n============ Test Too Low Grade to construct ============" << RESET << std::endl;
+	std::cout << BRED << "\n============ Test Too High Grade to construct ============" << RESET << std::endl;
 	try {
 		Bureaucrat Garance("Garance", 0);
 	}
