@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 22:22:42 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/04 20:16:02 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/05 16:20:27 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	Bureaucrat::signForm(Form &form) const {
 	if (form.isSigned())
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	else
-		std::cout << this->_name << " couldn't sign " << form.getName() << " because his grade is too low" << std::endl;
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because his/her grade is too low" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream &flux, Bureaucrat const &src)

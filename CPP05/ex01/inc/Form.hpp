@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:39:13 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/04 20:05:08 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/05 16:17:37 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 # include "Bureaucrat.hpp"
 # include "colors.hpp"
 
+class Bureaucrat;
+
 class Form {
 	private:
 		const std::string		_name;
         bool                    _signed;
-		int						_sign_grade;
-		int						_exec_grade;
+		const int				_sign_grade;
+		const int				_exec_grade;
 
 	public:
 		Form();
@@ -39,14 +41,14 @@ class Form {
 	class GradeTooHighException : public std::exception {
 		public:
 			virtual void printErr() const throw() {
-				std::cout << "One of the grades is too high for the form" << std::endl;
+				std::cout << "One of the grades is too high" << std::endl;
 			}
 	};
 
 	class GradeTooLowException : public std::exception {
 		public:
 			virtual void printErr() const throw() {
-				std::cout << "One of the grades is too low for the form" << std::endl;
+				std::cout << "One of the grades is too low" << std::endl;
 			}
 	};
 };

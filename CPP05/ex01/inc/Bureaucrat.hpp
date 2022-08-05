@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:02:25 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/04 20:06:09 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/05 16:17:34 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <string>
 # include <iostream>
 # include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 	private:

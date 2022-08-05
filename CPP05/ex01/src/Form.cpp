@@ -41,8 +41,6 @@ Form& Form::operator=(Form const &src) {
 	if (this != &src)
 	{
 		this->_signed = src._signed;
-		this->_sign_grade = src._sign_grade;
-		this->_exec_grade = src._exec_grade;
 	}
 	return *this;
 }
@@ -64,13 +62,16 @@ int Form::getExecGrade() const {
 }
 
 void	Form::beSigned(Bureaucrat &br) {
-	if (this->_sign_grade <= br.getGrade())
+	if (this->_sign_grade >= br.getGrade())
 	{
 		this->_signed = true;
 		br.signForm(*this);
 	}
 	else
+	{
+		br.signForm(*this);
 		throw Form::GradeTooLowException();
+	}
 }
 
 std::ostream& operator<<(std::ostream &flux, Form const &src)
