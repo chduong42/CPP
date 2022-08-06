@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:39:13 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/05 23:02:19 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/06 18:32:00 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ class ShrubberyCreationForm : public AForm {
 
 		virtual void			execute(Bureaucrat const & executor) const;
 };
-
-std::ostream& operator<<(std::ostream &flux, ShrubberyCreationForm const& src);
 
 #endif

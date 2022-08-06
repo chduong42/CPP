@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:51:16 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/06 18:14:47 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/06 19:05:43 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@
 
 int main()
 {
-	std::fstream	file;
-	std::string		buff = "Norminet";
-	
 	std::cout << "\n================== Test Construction ====================" << std::endl;
 	std::cout << "------------------ Shrubbery Creation Forms ------------------" << std::endl;
-	AForm*			s1 = new ShrubberyCreationForm(buff);
+	AForm*			s1 = new ShrubberyCreationForm("Norminet");
 
 	std::cout << "\n------------------ Robotomy Request Forms ------------------" << std::endl;
 	AForm*			r1 = new RobotomyRequestForm("Bernadette");

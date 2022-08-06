@@ -6,14 +6,14 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/08/06 18:29:09 by chduong          ###   ########.fr        #
+#    Updated: 2022/08/06 18:28:47 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #			EXEC NAME & FOLDERS			#
 #########################################
-NAME		=	Forms
+NAME		=	Intern
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 INC_DIR		=	inc/
@@ -40,8 +40,14 @@ INC			=	-I inc
 #           & OBJECT FILES    	        #
 #           & DEPENDENCIES    	        #
 #########################################
-SRC		=	main.cpp	Bureaucrat.cpp		Form.cpp
-					
+SRC		=	main.cpp\
+			AForm.cpp\
+			Intern.cpp\
+			Bureaucrat.cpp\
+			PresidentialPardonForm.cpp\
+			RobotomyRequestForm.cpp\
+			ShrubberyCreationForm.cpp
+
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
 

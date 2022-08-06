@@ -26,6 +26,4 @@ class RobotomyRequestForm : public AForm {
 		virtual void			execute(Bureaucrat const & executor) const;
 };
 
-std::ostream& operator<<(std::ostream &flux, RobotomyRequestForm const& src);
-
 #endif
