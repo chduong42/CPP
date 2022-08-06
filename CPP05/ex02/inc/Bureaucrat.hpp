@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:02:25 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/05 22:16:52 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/06 14:39:47 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ class Bureaucrat {
 	class GradeTooHighException : public std::exception {
 		public:
 			virtual void printErr() const throw() {
-				std::cout << "The grade is too high" << std::endl;
+				std::cout << "Exception: The highest grade is 1, can't be less" << std::endl;
 			}
 	};
 
 	class GradeTooLowException : public std::exception {
 		public:
 			virtual void printErr() const throw() {
-				std::cout << "The grade is too low" << std::endl;
+				std::cout << "Exception: The lowest grade is 150, can't be more" << std::endl;
 			}
 	};
 };

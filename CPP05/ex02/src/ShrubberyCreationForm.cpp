@@ -44,11 +44,12 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (executor.executeForm(*this))
 	{
 		file.open(name_file.c_str());
-		file << "^  ^  ^   ^      ___I_      ^  ^   ^  ^  ^   ^  ^\n";
+		file << " Ʌ  Ʌ  Ʌ   Ʌ  🌙  ___I_      Ʌ  Ʌ   Ʌ  Ʌ  Ʌ   Ʌ  Ʌ \n";
 		file << "/|\\/|\\/|\\ /|\\    /\\-_--\\    /|\\/|\\ /|\\/|\\/|\\ /|\\/|\\\n";
 		file << "/|\\/|\\/|\\ /|\\   /  \\_-__\\   /|\\/|\\ /|\\/|\\/|\\ /|\\/|\\\n";
-		file << "/|\\/|\\/|\\ /|\\   |[]| [] |   /|\\/|\\ /|\\/|\\/|\\ /|\\/|\\\n";
+		file << "/|\\/|\\/|\\ /|\\   |[]| [] |🐈 /|\\/|\\ /|\\/|\\/|\\ /|\\/|\\\n";
+		std::cout << "==> The file \"" << name_file << "\" created!" << std::endl;
 	}
 	else
-		throw AForm::GradeTooLowException();
+		throw AForm::RequirementException();
 }

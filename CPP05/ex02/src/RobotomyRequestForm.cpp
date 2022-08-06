@@ -41,7 +41,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	if (executor.executeForm(*this))
 	{
 		std::cout << "bzzzzzzzzzt bzzzzzzzzt (bruits de perceuse)" << std::endl;
-		std::cout << this->getTarget() << ": robotomisation ";
+		std::cout << this->getTarget() << "'s robotomisation ";
 		srand(time(NULL));
 		if (rand() % 2)
 			std::cout << "succeed" << std::endl;
@@ -49,5 +49,5 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 			std::cout << "failed" << std::endl;
 	}
 	else
-		throw AForm::GradeTooLowException();
+		throw AForm::RequirementException();
 }

@@ -39,7 +39,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	if (executor.executeForm(*this))
-		std::cout << this->getTarget() << "has been forgiven by Zaphod Beeblebrox" << std::endl;
+		std::cout << this->getTarget() << " has been forgiven by Zaphod Beeblebrox" << std::endl;
 	else
-		throw AForm::GradeTooLowException();
+		throw AForm::RequirementException();
 }

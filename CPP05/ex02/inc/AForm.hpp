@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:39:13 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/05 23:56:13 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/06 14:42:49 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,21 @@ class AForm {
 	class GradeTooHighException : public std::exception {
 		public:
 			virtual void printErr() const throw() {
-				std::cout << "One of the grades is too high" << std::endl;
+				std::cout << "Exception: One of the grades is too high" << std::endl;
 			}
 	};
 
 	class GradeTooLowException : public std::exception {
 		public:
 			virtual void printErr() const throw() {
-				std::cout << "One of the grades is too low" << std::endl;
+				std::cout << "Exception: One of the grades is too low" << std::endl;
 			}
+	};
 
-			virtual void printReq() const throw() {
-				std::cout << "Form is not signed or Bureaucrate is undergraded to execute" << std::endl;
+	class RequirementException : public std::exception {
+		public:
+			virtual void printErr() const throw() {
+				std::cout << "Exception: Form is not signed or Bureaucrate is undergraded to execute" << std::endl;
 			}
 	};
 };
