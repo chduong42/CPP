@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:01:28 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/10 03:35:11 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/10 15:28:03 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	castFromChar(const char *str)
 
 void	castFromInt(const char *str)
 {
-	long int	l = strtol(str, NULL, 10);
-	int			i = static_cast<int>(l);
+	long long l = strtol(str, NULL, 10);
 	
-	if (l < INT_MIN || l > INT_MAX)
+	if (errno == ERANGE || l < INT_MIN || l > INT_MAX)
 	{
 		printImpossible();
 		return;
 	}
+	int			i = static_cast<int>(l);
 	std::cout << "char: ";
 	if (i < CHAR_MIN || i > CHAR_MAX)
 		std::cout << "impossible" << std::endl;
@@ -40,19 +40,70 @@ void	castFromInt(const char *str)
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << "'" << static_cast<char>(i) << "'" << std::endl;
-		
-	std::cout << "int: ";
-		std::cout << "impossible" << std::endl;
-
-	
+	std::cout << "int: " << i << std::endl;
+	std::cout << std::setprecision(1) << std::fixed;
+	std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(i) << std::endl;
 }
 
 void	castFromFloat(const char *str)
 {
+	double	d = strtod(str, NULL);
+
+	if (errno == ERANGE || (!isinf(d) && (d < -FLT_MAX || d > FLT_MAX)))
+	{
+		printImpossible();
+		return;
+	}
+	float	f = static_cast<float>(d);
+	std::cout << "char: ";
+	if (f < CHAR_MIN || f > CHAR_MAX || isnanf(f))
+		std::cout << "impossible" << std::endl;
+	else if (!isprint(static_cast<char>(f)))
+		std::cout << "Non displayable" << std::endl;
+	else
+		std::cout << "'" << static_cast<char>(f) << "'" << std::endl;
+		
+	std::cout << "int: ";
+	if (d < INT_MIN || d > INT_MAX || isnanf(f))
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(f) << std::endl;
+		
+	std::cout << std::setprecision(1) << std::fixed;
+	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(f) << std::endl;
 	return;
 }
 
 void	castFromDouble(const char *str)
 {
+	double	d = strtod(str, NULL);
+
+	if (errno == ERANGE)
+	{
+		printImpossible();
+		return;
+	}
+	std::cout << "char: ";
+	if (d < CHAR_MIN || d > CHAR_MAX || isnan(d))
+		std::cout << "impossible" << std::endl;
+	else if (!isprint(static_cast<char>(d)))
+		std::cout << "Non displayable" << std::endl;
+	else
+		std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
+	
+	std::cout << "int: ";
+	if (d < INT_MIN || d > INT_MAX || isnan(d))
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(d) << std::endl;
+		
+	std::cout << std::setprecision(1) << std::fixed << "float: ";
+	if (!isinf(d) && (d < -FLT_MAX || d > FLT_MAX))
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<float>(d) << "f" << std::endl;
+	std::cout << "double: " << d << std::endl;
 	return;
 }

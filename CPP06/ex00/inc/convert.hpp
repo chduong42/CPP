@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:36:40 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/10 03:33:31 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/10 14:15:35 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <cmath>
 # include <cctype>
 # include <cerrno>
+# include <cfloat>
 # include <climits>
 # include <cstdlib>
 # include <cstring>

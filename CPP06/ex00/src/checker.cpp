@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:01:09 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/10 03:30:41 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/10 15:18:18 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ bool    isFloat(const char *str)
 		return true;
 	while (isdigit(*str))
 		++str;
-	if (*str != '.')
+	if (*str == '.')
 		++str;
 	while (isdigit(*str))
 		++str;
@@ -63,7 +63,7 @@ bool    isDouble(const char *str)
 		return (false);
 	while (isspace(*str))
 		++str;
-	if (!strcmp(str, "nanf"))
+	if (!strcmp(str, "nan"))
 		return true;
 	if (*str == '+' || *str == '-')
 		++str;
@@ -71,11 +71,11 @@ bool    isDouble(const char *str)
 		return true;
 	while (isdigit(*str))
 		++str;
-	if (*str != '.')
+	if (*str == '.')
 		++str;
 	while (isdigit(*str))
 		++str;
-	if (*str != 'f' || *++str)
+	if (*str)
 		return false;
 	return true;
 }
