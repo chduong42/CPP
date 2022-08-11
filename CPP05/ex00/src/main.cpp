@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:51:16 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/05 15:17:31 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/06 19:31:32 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 	}
 
 	std::cout << BGRN << "\n============ Test constructor OK ============" << RESET << std::endl;
-	Bureaucrat Random();
+	Bureaucrat Random;
 	Bureaucrat K("Kenny", 2);
 	Bureaucrat K2(K);
 	Bureaucrat Max("Max", 149);
