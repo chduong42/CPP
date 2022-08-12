@@ -6,14 +6,14 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/08/10 19:01:22 by chduong          ###   ########.fr        #
+#    Updated: 2022/08/12 16:14:58 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #			EXEC NAME & FOLDERS			#
 #########################################
-NAME		=	Base
+NAME		=	Array
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 INC_DIR		=	inc/
@@ -29,7 +29,7 @@ AR			=	ar rcs
 RM			= 	rm -rf
 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
-CXXFLAGS	+=	-MMD -MP 
+CXXFLAGS	+=	-MMD -MP -g3
 
 LFLAGS		=	
 DEBUG		=	-g3 -fsanitize=address,undefined
@@ -40,7 +40,7 @@ INC			=	-I inc
 #           & OBJECT FILES    	        #
 #           & DEPENDENCIES    	        #
 #########################################
-SRC		=	main.cpp	Base.cpp
+SRC		=	main.cpp
 
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))
