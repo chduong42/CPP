@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 16:23:57 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/12 18:32:43 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/12 18:36:18 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int, char**)
 	{
 		const int value = rand() % 101;
 		numbers[i] = value;
+		mirror[i] = value;
 	}
 	std::cout << "\n================ numbers content ================" << std::endl;
 	numbers.printOut();
@@ -85,5 +86,6 @@ int main(int, char**)
 	tmp2 = numbers;
 	tmp2.printOut();
 	
+	delete [] mirror;
 	return 0;
 }
