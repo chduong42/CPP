@@ -6,14 +6,14 @@
 #    By: chduong <chduong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 17:16:04 by chduong           #+#    #+#              #
-#    Updated: 2022/08/11 19:40:00 by chduong          ###   ########.fr        #
+#    Updated: 2022/08/13 12:38:28 by chduong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #			EXEC NAME & FOLDERS			#
 #########################################
-NAME		=	iter
+NAME		=	Span
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 INC_DIR		=	inc/
@@ -40,7 +40,7 @@ INC			=	-I inc
 #           & OBJECT FILES    	        #
 #           & DEPENDENCIES    	        #
 #########################################
-SRC		=	main.cpp
+SRC		=	main.cpp	Span.cpp
 
 OBJ		=	$(SRC:%.cpp=%.o)
 OBJ		:=	$(addprefix $(OBJ_DIR), $(OBJ))

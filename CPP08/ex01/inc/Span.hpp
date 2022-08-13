@@ -6,7 +6,7 @@
 /*   By: chduong <chduong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 20:46:56 by chduong           #+#    #+#             */
-/*   Updated: 2022/08/12 21:27:46 by chduong          ###   ########.fr       */
+/*   Updated: 2022/08/13 12:34:56 by chduong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <vector>
 # include <algorithm>
 # include <exception>
+# include <cstdlib>
+# include <climits>
 
 typedef unsigned int uint;
 
@@ -33,9 +35,10 @@ class Span {
 		Span&	operator=(Span const &src);
 		
 		void	addNumber(int val);
-		void	addPlageNumber(uint plage, int val);
-		void	shortestSpan() const;
-		void	longestSpan() const;
+		void	addPlageNumber(uint plage);
+		void	printNumber() const;
+		int		shortestSpan() const;
+		int		longestSpan() const;
 	
 	class TooManyException : public std::exception {
 		public:
